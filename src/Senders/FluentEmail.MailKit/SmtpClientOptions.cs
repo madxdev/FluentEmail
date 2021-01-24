@@ -15,5 +15,14 @@ namespace FluentEmail.MailKitSmtp
         public string MailPickupDirectory { get; set; } = string.Empty;
         public SecureSocketOptions? SocketOptions { get; set; }
         public bool BypassCertificateValidation { get; set; } = false;
+        public Dkim Dkim { get; set; }
+    }
+
+    public class Dkim
+    {
+        public bool Sign { get; set; } = false;
+        public string Selector { get; set; } = string.Empty;
+        public string Domain { get; set; } = string.Empty;
+        public string Key { get; set; } = string.Empty;
     }
 }

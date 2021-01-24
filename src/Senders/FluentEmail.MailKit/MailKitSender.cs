@@ -3,6 +3,7 @@ using FluentEmail.Core.Interfaces;
 using FluentEmail.Core.Models;
 using MailKit.Net.Smtp;
 using MimeKit;
+using MimeKit.Cryptography;
 using System;
 using System.IO;
 using System.Text;
@@ -268,6 +269,23 @@ namespace FluentEmail.MailKitSmtp
                 case Priority.High:
                     message.Priority = MessagePriority.Urgent;
                     break;
+            }
+
+            if (_smtpClientOptions.Dkim.Sign)
+            {
+                HeaderId[] headersToSign = new HeaderId[] { HeaderId.From, HeaderId.Subject, HeaderId.Date };
+
+                DkimSigner signer = new DkimSigner(_smtpClientOptions.Dkim.Key, _smtpClientOptions.Dkim.Domain, _smtpClientOptions.Dkim.Selector)
+                {
+                    SignatureAlgorithm = DkimSignatureAlgorithm.RsaSha256,
+                    HeaderCanonicalizationAlgorithm = DkimCanonicalizationAlgorithm.Relaxed,
+                    BodyCanonicalizationAlgorithm = DkimCanonicalizationAlgorithm.Relaxed,
+                    AgentOrUserIdentifier = $"@{_smtpClientOptions.Dkim.Domain}",
+                    QueryMethod = "dns/txt",
+                };
+
+                message.Prepare(EncodingConstraint.EightBit);
+                signer.Sign(message, headersToSign);
             }
 
             return message;

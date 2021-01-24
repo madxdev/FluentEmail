@@ -56,6 +56,9 @@ namespace FluentEmail.MailKitSmtp
                 {
                     if (_smtpClientOptions.SocketOptions.HasValue)
                     {
+                        if (_smtpClientOptions.BypassCertificateValidation)
+                            client.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
                         client.Connect(
                             _smtpClientOptions.Server,
                             _smtpClientOptions.Port,
@@ -116,6 +119,9 @@ namespace FluentEmail.MailKitSmtp
 
                 using (var client = new SmtpClient())
                 {
+                    if (_smtpClientOptions.BypassCertificateValidation)
+                        client.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
                     if (_smtpClientOptions.SocketOptions.HasValue)
                     {
                         client.Connect(

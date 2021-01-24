@@ -14,5 +14,6 @@ namespace FluentEmail.MailKitSmtp
         public bool UsePickupDirectory { get; set; } = false;
         public string MailPickupDirectory { get; set; } = string.Empty;
         public SecureSocketOptions? SocketOptions { get; set; }
+        public bool BypassCertificateValidation { get; set; } = false;
     }
 }

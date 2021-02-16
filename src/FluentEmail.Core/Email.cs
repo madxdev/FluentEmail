@@ -472,6 +472,30 @@ namespace FluentEmail.Core
             return this;
         }
 
+        public IFluentEmail AttachFromStream(Stream stream, string attachmentName, string contentType = null)
+        {
+            Attach(new Attachment()
+            {
+                Data = stream,
+                Filename = attachmentName,
+                ContentType = contentType
+            });
+
+            return this;
+        }
+
+        public IFluentEmail AttachFromBuffer(byte[] buffer, string attachmentName, string contentType = null)
+        {
+            Attach(new Attachment()
+            {
+                DataBuffer = buffer,
+                Filename = attachmentName,
+                ContentType = contentType
+            });
+
+            return this;
+        }
+
         /// <summary>
         /// Adds tag to the Email. This is currently only supported by the Mailgun provider. <see href="https://documentation.mailgun.com/en/latest/user_manual.html#tagging"/>
         /// </summary>

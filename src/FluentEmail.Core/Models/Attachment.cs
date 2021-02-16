@@ -10,6 +10,7 @@ namespace FluentEmail.Core.Models
         public bool IsInline { get; set; }
         public string Filename { get; set; }
         public Stream Data { get; set; }
+        public byte[] DataBuffer{ get; set; }
         public string ContentType { get; set; }
         public string ContentId { get; set; }
     }

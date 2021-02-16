@@ -3,11 +3,12 @@
   <PropertyGroup>
     <Description>Send emails via MailKit. The SmtpClient has been deprecated and Microsoft recommends using MailKit instead.</Description>
     <AssemblyTitle>Fluent Email - MailKit</AssemblyTitle>
-    <Authors>Luke Lowrey;Ben Cull;Matt Rutledge;Github Contributors</Authors>
+    <Authors>MadXdev fork (Luke LowreyBen Cull)</Authors>
     <PackageTags>$(PackageTags);mailkit</PackageTags>
     <Version>3.0.0</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>FluentEmail.MailKitSmtp</RootNamespace>
+    <Company>MadXdev fork (Luke LowreyBen Cull)</Company>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="2.7.0" />
+    <PackageReference Include="MailKit" Version="2.10.1" />
   </ItemGroup>
 </Project>

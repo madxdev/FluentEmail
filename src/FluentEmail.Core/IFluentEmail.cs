@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
@@ -185,12 +186,16 @@ namespace FluentEmail.Core
 
 	    IFluentEmail AttachFromFilename(string filename,  string contentType = null, string attachmentName = null);
 
-	    /// <summary>
-	    /// Adds a Plaintext alternative Body to the Email. Used in conjunction with an HTML email,
-	    /// this allows for email readers without html capability, and also helps avoid spam filters.
-	    /// </summary>
-	    /// <param name="body">The content of the body</param>
-	    IFluentEmail PlaintextAlternativeBody(string body);
+		IFluentEmail AttachFromStream(Stream stream, string attachmentName, string contentType = null);
+
+		IFluentEmail AttachFromBuffer(byte[] buffer, string attachmentName, string contentType = null);
+
+		/// <summary>
+		/// Adds a Plaintext alternative Body to the Email. Used in conjunction with an HTML email,
+		/// this allows for email readers without html capability, and also helps avoid spam filters.
+		/// </summary>
+		/// <param name="body">The content of the body</param>
+		IFluentEmail PlaintextAlternativeBody(string body);
 
 	    /// <summary>
 	    /// Adds template to email from embedded resource

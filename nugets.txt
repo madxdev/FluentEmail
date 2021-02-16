@@ -1,0 +1,7 @@
+dotnet nuget push -s http://nuget.adaptivity.aion.cz/v3/index.json FluentEmail.Core.3.0.0.nupkg
+dotnet nuget push -s http://nuget.adaptivity.aion.cz/v3/index.json FluentEmail.MailKit.3.0.0.nupkg
+dotnet nuget push -s http://nuget.adaptivity.aion.cz/v3/index.json FluentEmail.Razor.3.0.0.nupkg
+MadXdev fork (Luke LowreyBen Cull)
+
+dotnet dev-certs https --trust
+ API-KEY aion-development-qz2jga8pl3dvn2akksyquwcs9yg2u

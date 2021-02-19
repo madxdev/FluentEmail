@@ -276,7 +276,7 @@ namespace FluentEmail.MailKitSmtp
                     break;
             }
 
-            if (_smtpClientOptions.Dkim.Sign)
+            if (_smtpClientOptions.Dkim != null && _smtpClientOptions.Dkim.Sign)
             {
                 HeaderId[] headersToSign = new HeaderId[] { HeaderId.From, HeaderId.Subject, HeaderId.Date };
 

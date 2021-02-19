@@ -9,6 +9,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>FluentEmail.MailKitSmtp</RootNamespace>
     <Company>MadXdev fork (Luke LowreyBen Cull)</Company>
+    <PackageId>FluentEmail.MailKit.MadXDevFork</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

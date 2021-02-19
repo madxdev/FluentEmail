@@ -7,6 +7,8 @@
     <Version>3.0.0</Version>
     <AssetsDirectory>../../assets</AssetsDirectory>
     <Authors>MadXdev fork (Luke Lowrey;Ben Cull)</Authors>
+    <PackageId>FluentEmail.Core.MadXDevFork</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <!--<Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">

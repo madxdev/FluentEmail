@@ -9,6 +9,8 @@
     <AssetsDirectory>../../../assets</AssetsDirectory>
     <NoWarn>NU5104</NoWarn>
     <Authors>MadXdev fork (Luke Lowrey;Ben Cull)</Authors>
+    <PackageId>FluentEmail.Razor.MadXDevFork</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
